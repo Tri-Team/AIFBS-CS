@@ -1,5 +1,8 @@
 # Prerequisites
 *.d
+*.dev
+*.layout
+*.win
 
 # Compiled Object files
 *.slo
