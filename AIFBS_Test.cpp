@@ -1,28 +1,30 @@
-#include "AIFBS_ChunkTreeNode.cpp"
-#include "AIFBS_ChunkTree.cpp"
+#include "AIFBS_BTreeNode.cpp"
+#include "AIFBS_BTree.cpp"
 #include <iostream>
+#include <string>
 
 using namespace std;
 using namespace AIFBS;
 int main() {
-	AIFBS_ChunkTree t(3);
-	t.insert(10);
-	t.insert(20);
-	t.insert(5);
-	t.insert(6);
-	t.insert(12);
-	t.insert(30);
-	t.insert(7);
-	t.insert(17);
+	AIFBS_BTree<string> t(3);
+	t.insert("chunk1");
+	t.insert("chunk2");
+	t.insert("chunk3");
+	t.insert("chunk4");
+	t.insert("chunk5");
+	t.insert("chunk6");
+	t.insert("chunk7");
+	t.insert("chunk8");
 
 	cout << "Traversal of the constucted tree is ";
 	t.traverse();
 
-	int k = 6;
-	(t.search(k) != NULL)? cout << "\nPresent" : cout << "\nNot Present\n";
+	string k = "chunk2";
+	(t.search(k) != NULL)? cout << "\nPresent\n" : cout << "\nNot Present\n";
 
-	k = 15;
-	(t.search(k) != NULL)? cout << "\nPresent" : cout << "\nNot Present\n";
+	k = "15";
+	(t.search(k) != NULL)? cout << "\nPresent\n" : cout << "\nNot Present\n";
+	// AIFBS_BTreeNode<int> n(3,true);
 
 	return 0;
 }

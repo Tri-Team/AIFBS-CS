@@ -7,18 +7,20 @@ namespace AIFBS {
 	*	All Tree Node Base definations
 	**/
 	
-	AIFBS_BTreeNode::AIFBS_BTreeNode(int t1, bool leaf1)
+	template <class T>
+	AIFBS_BTreeNode<T>::AIFBS_BTreeNode(int t1, bool leaf1)
 	{
 		n = 0;
 		
 		t = t1;
 		leaf = leaf1;
 	
-		keys = new int[2*t-1];
-		C = new AIFBS_BTreeNode *[2*t];
+		keys = new T[2*t-1];
+		C = new AIFBS_BTreeNode<T> *[2*t];
 	}
 	
-	void AIFBS_BTreeNode::traverse()
+	template <class T>
+	void AIFBS_BTreeNode<T>::traverse()
 	{
 		int i;
 		for (i = 0; i < n; i++)
@@ -32,7 +34,8 @@ namespace AIFBS {
 			C[i]->traverse();
 	}
 
-	AIFBS_BTreeNode *AIFBS_BTreeNode::search(int k)
+	template <class T>
+	AIFBS_BTreeNode<T> *AIFBS_BTreeNode<T>::search(T k)
 	{
 		// Find the first key greater than or equal to k
 		int i = 0;
@@ -52,7 +55,9 @@ namespace AIFBS {
 	}
 
 
-	void AIFBS_BTreeNode::insertNonFull(int k)
+
+	template <class T>
+	void AIFBS_BTreeNode<T>::insertNonFull(T k)
 	{
 		// Initialize index as index of rightmost element
 		int i = n-1;
@@ -97,11 +102,12 @@ namespace AIFBS {
 	
 	// A utility function to split the child y of this node
 	// Note that y must be full when this function is called
-	void AIFBS_BTreeNode::splitChild(int i, AIFBS_BTreeNode *y)
+	template <class T>
+	void AIFBS_BTreeNode<T>::splitChild(int i, AIFBS_BTreeNode *y)
 	{
 		// Create a new node which is going to store (t-1) keys
 		// of y
-		AIFBS_BTreeNode *z = new AIFBS_BTreeNode(y->t, y->leaf);
+		AIFBS_BTreeNode<T> *z = new AIFBS_BTreeNode<T>(y->t, y->leaf);
 		z->n = t - 1;
 	
 		// Copy the last (t-1) keys of y to z
