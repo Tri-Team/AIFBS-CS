@@ -2,6 +2,8 @@
 *
 *	@description ChunkTree Key having our entity as payload
 **/
+#ifndef CHUNKTREE_NODE_KEY_DEF
+#define CHUNKTREE_NODE_KEY_DEF
 #include <string>
 #include "AIFBS_NodeKeyBase.cpp"
 namespace AIFBS {
@@ -9,6 +11,7 @@ namespace AIFBS {
 	{
 		std::string m_key;
 		// entity cd;
+		
 		//all chunck playload can come here
 	public:
 		AIFBS_ChunkNodeKey() {
@@ -51,3 +54,4 @@ namespace AIFBS {
 
 
 }
+#endif
