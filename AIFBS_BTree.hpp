@@ -28,6 +28,11 @@ namespace AIFBS {
 			return (root == NULL)? NULL : root->search(k); 
 		}
 	
+		T* searchKeyRef(T k)
+		{ 
+			return (root == NULL)? NULL : root->searchKeyRef(k); 
+		}
+	
 		void insert(T k);
 	};
 }

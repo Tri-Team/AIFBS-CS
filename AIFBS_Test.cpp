@@ -1,9 +1,4 @@
-#include "AIFBS_BTreeNode.cpp"
-#include "AIFBS_BTree.cpp"
-#include "AIFBS_ChunkNodeKey.cpp"
-#include "AIFBS_FileNodeKey.cpp"
-#include <iostream>
-#include <string>
+#include "AIFBS_CS.cpp"
 
 using namespace std;
 using namespace AIFBS;
@@ -58,7 +53,17 @@ int main() {
 	//endregion
 
 	//region Inserting files with chunk names
+		//Building a Scenario
+		AIFBS_CS cs(3);
+
+		cs.insert("cd/cfd/file1/chunk1", 1);
+		cs.insert("cd/cfd/file1/chunk3", 1);
+		cs.insert("cd/cfd/file1/chunk2", 1);
+		cs.insert("cd/cfd/file1/chunk4", 1);
 		
+		cs.traverse();
+		// SplittedNames sn = cs.split("cd/cfd/file1/chunk1");
+		// cout<<sn.m_fileName<<" "<<sn.m_chunkName;
 
 	//endregion
 

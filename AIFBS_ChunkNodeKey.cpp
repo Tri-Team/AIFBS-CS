@@ -30,6 +30,11 @@ namespace AIFBS {
 		bool operator> (const AIFBS_ChunkNodeKey& other) {
 			return m_key > other.m_key;
 		}
+		
+		bool operator== (const AIFBS_ChunkNodeKey& other) {
+			return m_key == other.m_key;
+		}
+		
 		void Print( std::ostream& out) {
 			out<<m_key;
 		}

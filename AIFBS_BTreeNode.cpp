@@ -23,6 +23,7 @@ namespace AIFBS {
 	void AIFBS_BTreeNode<T>::traverse()
 	{
 		int i;
+		std::cout<<" "<<n<<": ";
 		for (i = 0; i < n; i++)
 		{
 			if (leaf == false)
@@ -54,8 +55,25 @@ namespace AIFBS {
 		return C[i]->search(k);
 	}
 
-
-
+	template <class T>
+	T *AIFBS_BTreeNode<T>::searchKeyRef(T k)
+	{
+		// Find the first key greater than or equal to k
+		int i = 0;
+		while (i < n && k > keys[i])
+			i++;
+	
+		// If the found key is equal to k, return this node
+		if (keys[i] == k)
+			return &keys[i];
+	
+		// If key is not found here and this is a leaf node
+		if (leaf == true)
+			return NULL;
+	
+		// Go to the appropriate child
+		return C[i]->searchKeyRef(k);
+	}
 	template <class T>
 	void AIFBS_BTreeNode<T>::insertNonFull(T k)
 	{

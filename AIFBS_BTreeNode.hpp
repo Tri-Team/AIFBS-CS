@@ -22,7 +22,9 @@ namespace AIFBS {
 		void traverse();
 	
 		// A function to search a key in subtree rooted with this node.
-		AIFBS_BTreeNode *search(T k); // returns NULL if k is not present.
+		AIFBS_BTreeNode<T> *search(T k); // returns NULL if k is not present.
+		
+		T *searchKeyRef(T k);
 	
 	template <class U>
 	friend class AIFBS_BTree;

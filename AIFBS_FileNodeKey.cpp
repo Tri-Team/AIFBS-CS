@@ -9,10 +9,10 @@ namespace AIFBS {
 	class AIFBS_FileNodeKey
 	{
 		std::string m_key;
-		AIFBS_BTree<AIFBS_ChunkNodeKey> *m_chunkTree;
 		// entity cd;
 		//all chunck playload can come here
 	public:
+		AIFBS_BTree<AIFBS_ChunkNodeKey> *m_chunkTree;
 		AIFBS_FileNodeKey() {
 			m_key = "default-fault";
 		};
@@ -32,9 +32,18 @@ namespace AIFBS {
 		bool operator> (const AIFBS_FileNodeKey& other) {
 			return m_key > other.m_key;
 		}
+		
+		bool operator== (const AIFBS_FileNodeKey& other) {
+			return m_key == other.m_key;
+		}
+
 		void Print( std::ostream& out) {
 			out<<m_key<<": ";
-			m_chunkTree->traverse();
+			if(m_chunkTree == NULL) {
+				out<<"ChunkTree is NULL";
+			} else {
+				m_chunkTree->traverse();
+			}
 		}
 
 		friend std::ostream& operator<<( std::ostream& out, AIFBS_FileNodeKey& b )
