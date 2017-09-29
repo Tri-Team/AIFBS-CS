@@ -1,4 +1,4 @@
-#include "AIFBS_CS.cpp"
+#include "AIFBS_CS.hpp"
 
 using namespace std;
 using namespace AIFBS;
@@ -60,7 +60,10 @@ int main() {
 		cs.insert("cd/cfd/file1/chunk3", 1);
 		cs.insert("cd/cfd/file1/chunk2", 1);
 		cs.insert("cd/cfd/file1/chunk4", 1);
-		
+		cs.insert("cd/cfd/file2/chunk3", 1);
+		cs.insert("cd/cfd/file2/chunk1", 1);
+		cs.insert("cd/cfd/file2/chunk2", 1);
+
 		cs.traverse();
 		// SplittedNames sn = cs.split("cd/cfd/file1/chunk1");
 		// cout<<sn.m_fileName<<" "<<sn.m_chunkName;

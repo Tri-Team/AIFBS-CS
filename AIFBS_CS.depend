@@ -1,0 +1,63 @@
+# depslib dependency file v1.0
+1506581921 source:/home/sohail/Desktop/Qazi/Source/AIFBS-CS/AIFBS_BTree.cpp
+	"AIFBS_BTreeNode.hpp"
+	"AIFBS_BTree.hpp"
+
+1506588066 /home/sohail/Desktop/Qazi/Source/AIFBS-CS/AIFBS_BTreeNode.hpp
+
+1506586190 /home/sohail/Desktop/Qazi/Source/AIFBS-CS/AIFBS_BTree.hpp
+	<iostream>
+	"AIFBS_BTreeNode.hpp"
+
+1506588293 source:/home/sohail/Desktop/Qazi/Source/AIFBS-CS/AIFBS_BTreeNode.cpp
+	<iostream>
+	"AIFBS_BTreeNode.hpp"
+
+1506588912 source:/home/sohail/Desktop/Qazi/Source/AIFBS-CS/AIFBS_ChunkNodeKey.cpp
+	<string>
+	"AIFBS_NodeKeyBase.cpp"
+
+1506516426 /home/sohail/Desktop/Qazi/Source/AIFBS-CS/AIFBS_NodeKeyBase.cpp
+	<ostream>
+	<string>
+
+1506668281 source:/home/sohail/Desktop/Qazi/Source/AIFBS-CS/AIFBS_CS.cpp
+	"AIFBS_CS.hpp"
+
+1506586956 /home/sohail/Desktop/Qazi/Source/AIFBS-CS/AIFBS_CS.hpp
+	"AIFBS_BTreeNode.cpp"
+	"AIFBS_BTree.cpp"
+	"AIFBS_ChunkNodeKey.cpp"
+	"AIFBS_FileNodeKey.cpp"
+	<iostream>
+	<string>
+
+1506588293 /home/sohail/Desktop/Qazi/Source/AIFBS-CS/AIFBS_BTreeNode.cpp
+	<iostream>
+	"AIFBS_BTreeNode.hpp"
+
+1506581921 /home/sohail/Desktop/Qazi/Source/AIFBS-CS/AIFBS_BTree.cpp
+	"AIFBS_BTreeNode.hpp"
+	"AIFBS_BTree.hpp"
+
+1506588912 /home/sohail/Desktop/Qazi/Source/AIFBS-CS/AIFBS_ChunkNodeKey.cpp
+	<string>
+	"AIFBS_NodeKeyBase.cpp"
+
+1506588772 /home/sohail/Desktop/Qazi/Source/AIFBS-CS/AIFBS_FileNodeKey.cpp
+	<string>
+	"AIFBS_ChunkNodeKey.cpp"
+	"AIFBS_BTree.hpp"
+
+1506588772 source:/home/sohail/Desktop/Qazi/Source/AIFBS-CS/AIFBS_FileNodeKey.cpp
+	<string>
+	"AIFBS_ChunkNodeKey.cpp"
+	"AIFBS_BTree.hpp"
+
+1506516426 source:/home/sohail/Desktop/Qazi/Source/AIFBS-CS/AIFBS_NodeKeyBase.cpp
+	<ostream>
+	<string>
+
+1506669838 source:/home/sohail/Desktop/Qazi/Source/AIFBS-CS/AIFBS_Test.cpp
+	"AIFBS_CS.hpp"
+

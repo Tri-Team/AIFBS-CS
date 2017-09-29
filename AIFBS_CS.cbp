@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="AIFBS_CS" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="default">
+				<Option output="AIFBS_CS" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+			</Target>
+		</Build>
+		<Unit filename="AIFBS_BTree.cpp" />
+		<Unit filename="AIFBS_BTree.hpp" />
+		<Unit filename="AIFBS_BTreeNode.cpp" />
+		<Unit filename="AIFBS_BTreeNode.hpp" />
+		<Unit filename="AIFBS_CS.cpp" />
+		<Unit filename="AIFBS_CS.hpp" />
+		<Unit filename="AIFBS_ChunkNodeKey.cpp" />
+		<Unit filename="AIFBS_FileNodeKey.cpp" />
+		<Unit filename="AIFBS_NodeKeyBase.cpp" />
+		<Unit filename="AIFBS_Test.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

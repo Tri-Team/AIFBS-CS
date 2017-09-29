@@ -12,15 +12,15 @@ namespace AIFBS
 		AIFBS_FileNodeKey *fileNodeKey = fileTree->searchKeyRef(tempNode);
 
 		if(fileNodeKey == NULL) {
-			AIFBS_BTree<AIFBS_ChunkNodeKey> chunkTree(m_chunkT);
-			AIFBS_FileNodeKey newFileNodeKey(sn.m_fileName, &chunkTree);
+			AIFBS_BTree<AIFBS_ChunkNodeKey> *chunkTree = new AIFBS_BTree<AIFBS_ChunkNodeKey>(m_chunkT);
+			AIFBS_FileNodeKey newFileNodeKey(sn.m_fileName, chunkTree);
 			fileTree->insert(newFileNodeKey);
 			fileNodeKey = &newFileNodeKey;
 		}
 
-		AIFBS_ChunkNodeKey chunkNodeKey;
-		chunkNodeKey.setKey(sn.m_chunkName);
-		fileNodeKey->m_chunkTree->insert(chunkNodeKey);
+		AIFBS_ChunkNodeKey *chunkNodeKey = new AIFBS_ChunkNodeKey();
+		chunkNodeKey->setKey(sn.m_chunkName);
+		fileNodeKey->m_chunkTree->insert(*chunkNodeKey);
 	}
 
 	SplittedNames AIFBS_CS::split(std::string name) {
@@ -33,7 +33,7 @@ namespace AIFBS
 		}
 		
 		SplittedNames SN;
-		SN.m_fileName = name.substr(0, index-1);
+		SN.m_fileName = name.substr(0, index);
 		SN.m_chunkName = name.substr(index+1, name.size()-1);
 
 		return SN;
