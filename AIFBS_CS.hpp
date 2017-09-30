@@ -43,7 +43,7 @@ namespace AIFBS
 		}
 
 		void insert(std::string name, int payload);
-		AIFBS_ChunkNodeKey* getChunk(std::string t_chunkName);
+		AIFBS_ChunkNodeKey* find(std::string t_name);
 
 		void traverse() {
 			if(fileTree == NULL)

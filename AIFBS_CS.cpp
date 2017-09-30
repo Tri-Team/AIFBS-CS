@@ -22,6 +22,29 @@ namespace AIFBS
 		chunkNodeKey->setKey(sn.m_chunkName);
 		fileNodeKey->m_chunkTree->insert(*chunkNodeKey);
 	}
+	
+	AIFBS_ChunkNodeKey* AIFBS_CS::find(std::string t_name){
+		SplittedNames sn = split(t_name);
+		AIFBS_FileNodeKey tempFileKey;
+		tempFileKey.setKey(sn.m_fileName);
+		AIFBS_FileNodeKey *fileNodeKey = fileTree->searchKeyRef(tempFileKey);
+		if(fileNodeKey == NULL) {
+			//required file does not exists and therefore chunks does not exists
+			return NULL;
+		}
+		else {
+			AIFBS_ChunkNodeKey tempChunkKey;
+			tempChunkKey.setKey(sn.m_chunkName);
+			AIFBS_ChunkNodeKey* requiredChunk = fileNodeKey->m_chunkTree->searchKeyRef(tempChunkKey);
+			if(requiredChunk == NULL){
+				//required chunk not found
+				return NULL;
+			}
+			else{
+				return requiredChunk;
+			}
+		}
+	}
 
 	SplittedNames AIFBS_CS::split(std::string name) {
 		int index;

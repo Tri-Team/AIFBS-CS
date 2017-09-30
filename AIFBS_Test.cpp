@@ -54,17 +54,52 @@ int main() {
 
 	//region Inserting files with chunk names
 		//Building a Scenario
+//		AIFBS_CS cs(3);
+//
+//		cs.insert("cd/cfd/file1/chunk1", 1);
+//		cs.insert("cd/cfd/file1/chunk3", 1);
+//		cs.insert("cd/cfd/file1/chunk2", 1);
+//		cs.insert("cd/cfd/file1/chunk4", 1);
+//		
+//		cs.insert("cd/cfd/file2/chunk3", 1);
+//		cs.insert("cd/cfd/file2/chunk1", 1);
+//		cs.insert("cd/cfd/file2/chunk2", 1);
+//
+//		cs.insert("cd/cfd/file3/chunk4", 1);
+//		cs.insert("cd/cfd/file3/chunk1", 1);
+//		cs.insert("cd/cfd/file3/chunk9", 1);
+//		
+//		cs.traverse();
+		
+	//endregion		
+		
+	//region Inserting files and searching chunks
 		AIFBS_CS cs(3);
 
 		cs.insert("cd/cfd/file1/chunk1", 1);
 		cs.insert("cd/cfd/file1/chunk3", 1);
 		cs.insert("cd/cfd/file1/chunk2", 1);
 		cs.insert("cd/cfd/file1/chunk4", 1);
+		
 		cs.insert("cd/cfd/file2/chunk3", 1);
 		cs.insert("cd/cfd/file2/chunk1", 1);
 		cs.insert("cd/cfd/file2/chunk2", 1);
 
+		cs.insert("cd/cfd/file3/chunk4", 1);
+		cs.insert("cd/cfd/file3/chunk1", 1);
+		cs.insert("cd/cfd/file3/chunk9", 1);
+		
 		cs.traverse();
+		
+		AIFBS_ChunkNodeKey* requiredChunk = cs.find("cd/cfd/tempFile/chunk4"); //not found case
+		//AIFBS_ChunkNodeKey* requiredChunk = cs.find("cd/cfd/file2/chunk3"); //found case
+		if(requiredChunk != NULL)
+			cout<<"\n\nChunk found: "<<requiredChunk->getKey()<<endl;
+		else
+			cout<<"\n\nChunk not found."<<endl;
+	//endregion
+			
+	//region Splitting names test
 		// SplittedNames sn = cs.split("cd/cfd/file1/chunk1");
 		// cout<<sn.m_fileName<<" "<<sn.m_chunkName;
 
