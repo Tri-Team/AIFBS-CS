@@ -51,5 +51,13 @@ namespace AIFBS
 			else
 				fileTree->traverse();
 		}
+		
+		bool removeFile() {
+			
+		}
+		
+		bool removeChunk() {
+			
+		}
 	};
 }

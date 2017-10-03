@@ -34,6 +34,9 @@ namespace AIFBS {
 		}
 	
 		void insert(T k);
+
+		// The main function that removes a new key in thie B-Tree
+		void remove(T k);
 	};
 }
 #endif

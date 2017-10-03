@@ -42,4 +42,36 @@ namespace AIFBS {
 		}
 	}
 
+
+	//************************************************************//
+	//						REMOVE ADDED						  //
+	//************************************************************//
+	
+	template <class T>
+	void AIFBS_BTree<T>::remove(T k)
+	{
+		if (!root)
+		{
+			std::cout << "The tree is empty\n";
+			return;
+		}
+	
+		// Call the remove function for root
+		root->remove(k);
+	
+		// If the root node has 0 keys, make its first child as the new root
+		// if it has a child, otherwise set root as NULL
+		if (root->n==0)
+		{
+			AIFBS_BTreeNode<T> *tmp = root;
+			if (root->leaf)
+				root = NULL;
+			else
+				root = root->C[0];
+	
+			// Free the old root
+			delete tmp;
+		}
+		return;
+	}
 }
