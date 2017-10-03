@@ -56,8 +56,8 @@ namespace AIFBS
 			
 		}
 		
-		bool removeChunk() {
-			
-		}
+		bool remove(std::string chunkDetails);
+
+		bool removeFile(std::string fileName);
 	};
 }

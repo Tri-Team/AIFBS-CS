@@ -37,6 +37,15 @@ namespace AIFBS {
 
 		// The main function that removes a new key in thie B-Tree
 		void remove(T k);
+
+		bool isEmpty() {
+			return root == NULL;
+		}
+		void deleteAll() {
+			for (int i = 0; i < root->n; i++) {
+				root->remove(root->keys[i]);
+			}
+		}
 	};
 }
 #endif

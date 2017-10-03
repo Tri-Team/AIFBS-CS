@@ -14,13 +14,10 @@ int main() {
 		// t.insert("chunk6");
 		// t.insert("chunk7");
 		// t.insert("chunk8");
-
 		// cout << "Traversal of the constucted tree is ";
 		// t.traverse();
-
 		// string k = "chunk2";
 		// (t.search(k) != NULL)? cout << "\nPresent\n" : cout << "\nNot Present\n";
-
 		// k = "15";
 		// (t.search(k) != NULL)? cout << "\nPresent\n" : cout << "\nNot Present\n";
 	//endregion
@@ -40,37 +37,33 @@ int main() {
 		// t2.insert(c3);
 		// t2.insert(c4);
 		// t.insert(c5);
-
 		// // t.traverse();
-
 		// AIFBS_BTree<AIFBS_FileNodeKey> filetree(3);
 		// AIFBS_FileNodeKey filetreeNode1("file1", &t);
 		// AIFBS_FileNodeKey filetreeNode2("file2", &t2);
 		// filetree.insert(filetreeNode1);
 		// filetree.insert(filetreeNode2);
-
 		// filetree.traverse();
 	//endregion
 
 	//region Inserting files with chunk names
 		//Building a Scenario
-//		AIFBS_CS cs(3);
-//
-//		cs.insert("cd/cfd/file1/chunk1", 1);
-//		cs.insert("cd/cfd/file1/chunk3", 1);
-//		cs.insert("cd/cfd/file1/chunk2", 1);
-//		cs.insert("cd/cfd/file1/chunk4", 1);
-//		
-//		cs.insert("cd/cfd/file2/chunk3", 1);
-//		cs.insert("cd/cfd/file2/chunk1", 1);
-//		cs.insert("cd/cfd/file2/chunk2", 1);
-//
-//		cs.insert("cd/cfd/file3/chunk4", 1);
-//		cs.insert("cd/cfd/file3/chunk1", 1);
-//		cs.insert("cd/cfd/file3/chunk9", 1);
-//		
-//		cs.traverse();
-		
+		//AIFBS_CS cs(3);
+		//cs.insert("cd/cfd/file1/chunk1", 1);
+		//cs.insert("cd/cfd/file1/chunk3", 1);
+		//cs.insert("cd/cfd/file1/chunk2", 1);
+		//cs.insert("cd/cfd/file1/chunk4", 1);
+		//
+		//cs.insert("cd/cfd/file2/chunk3", 1);
+		//cs.insert("cd/cfd/file2/chunk1", 1);
+		//cs.insert("cd/cfd/file2/chunk2", 1);
+		//
+		//cs.insert("cd/cfd/file3/chunk4", 1);
+		//cs.insert("cd/cfd/file3/chunk1", 1);
+		//cs.insert("cd/cfd/file3/chunk9", 1);
+		//
+		//cs.traverse();
+		//
 	//endregion		
 		
 	//region Inserting files and searching chunks
@@ -97,6 +90,18 @@ int main() {
 			cout<<"\n\nChunk found: "<<requiredChunk->getKey()<<endl;
 		else
 			cout<<"\n\nChunk not found."<<endl;
+		
+		cs.removeFile("cd/cfd/file2");
+		/*cs.remove("cd/cfd/file3/chunk4");
+		cs.remove("cd/cfd/file3/chunk1");
+		cs.remove("cd/cfd/file3/chunk9");
+		cout << "\n After removing chunk4 in file 3: \n";*/
+		//cs.insert("cd/cfd/file3/chunk9", 4);
+
+
+
+		cs.traverse();
+
 	//endregion
 			
 	//region Splitting names test
@@ -105,7 +110,8 @@ int main() {
 
 	//endregion
 
-
+	cout << "\n\n";
+	std::system("pause");
 	return 0;
 }
 

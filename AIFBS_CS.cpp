@@ -61,5 +61,46 @@ namespace AIFBS
 
 		return SN;
 	}
+
+	bool AIFBS_CS::remove(std::string chunkDetails) {
+		SplittedNames sn = this->split(chunkDetails);
+
+		AIFBS_FileNodeKey tempFileKey;
+		tempFileKey.setKey(sn.m_fileName);
+		AIFBS_FileNodeKey *fileNodeKey = fileTree->searchKeyRef(tempFileKey);
+
+		if (fileNodeKey == NULL) {
+			return false;
+		}
+		else {
+			AIFBS_ChunkNodeKey tempChunkKey;
+			tempChunkKey.setKey(sn.m_chunkName);
+			AIFBS_ChunkNodeKey* requiredChunk = fileNodeKey->m_chunkTree->searchKeyRef(tempChunkKey);
+
+			if (requiredChunk == NULL) {
+				return false;
+			}
+			else {
+				fileNodeKey->m_chunkTree->remove(*requiredChunk);
+				if (fileNodeKey->m_chunkTree->isEmpty()) {
+					fileTree->remove(*fileNodeKey);
+				}
+			}
+		}
+	}
+
+	bool AIFBS_CS::removeFile(std::string fileName) {
+		AIFBS_FileNodeKey tempFileKey;
+		tempFileKey.setKey(fileName);
+		AIFBS_FileNodeKey *fileNodeKey = fileTree->searchKeyRef(tempFileKey);
+
+		if (fileNodeKey == NULL) {
+			return false;
+		}
+		else {
+			fileNodeKey->m_chunkTree->deleteAll();
+		}
+		fileTree->remove(*fileNodeKey);
+	}
 }
 #endif

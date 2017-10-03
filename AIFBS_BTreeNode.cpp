@@ -247,7 +247,7 @@ namespace AIFBS {
 	void AIFBS_BTreeNode<T>::removeFromNonLeaf(int idx)
 	{
 	
-		int k = keys[idx];
+		T k = keys[idx];
 	
 		// If the child that precedes k (C[idx]) has atleast t keys,
 		// find the predecessor 'pred' of k in the subtree rooted at
@@ -255,7 +255,7 @@ namespace AIFBS {
 		// in C[idx]
 		if (C[idx]->n >= t)
 		{
-			int pred = getPred(idx);
+			T pred = getPred(idx);
 			keys[idx] = pred;
 			C[idx]->remove(pred);
 		}
@@ -267,7 +267,7 @@ namespace AIFBS {
 		// Recursively delete succ in C[idx+1]
 		else if (C[idx+1]->n >= t)
 		{
-			int succ = getSucc(idx);
+			T succ = getSucc(idx);
 			keys[idx] = succ;
 			C[idx+1]->remove(succ);
 		}
@@ -286,7 +286,7 @@ namespace AIFBS {
 	
 	// A function to get predecessor of keys[idx]
 	template <class T>
-	int AIFBS_BTreeNode<T>::getPred(int idx)
+	T AIFBS_BTreeNode<T>::getPred(int idx)
 	{
 		// Keep moving to the right most node until we reach a leaf
 		AIFBS_BTreeNode<T> *cur=C[idx];
@@ -298,7 +298,7 @@ namespace AIFBS {
 	}
 	
 	template <class T>
-	int AIFBS_BTreeNode<T>::getSucc(int idx)
+	T AIFBS_BTreeNode<T>::getSucc(int idx)
 	{
 	
 		// Keep moving the left most node starting from C[idx+1] until we reach a leaf

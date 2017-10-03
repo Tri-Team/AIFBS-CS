@@ -21,7 +21,7 @@ namespace AIFBS {
 			m_chunkTree = t_chunkTree;
 		};
 		~AIFBS_FileNodeKey() {
-				// m_key = NULL;
+			//delete(m_chunkTree);
 		};		
 
 		//Must to overload
